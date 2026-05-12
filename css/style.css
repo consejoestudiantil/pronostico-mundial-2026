@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root {
-    /* PALETA "NOCHE MUNDIAL" ORIGINAL SIN CAMBIOS */
+    /* PALETA "NOCHE MUNDIAL" */
     --bg: #110e1f;        
     --bg2: #1c1833;       
     --bg3: #2a254a;       
@@ -35,7 +35,7 @@ body {
     overflow-x: hidden;
 }
 
-/* MARCA DE AGUA DE BAJO CONTRASTE */
+/* MARCA DE AGUA DEL TROFEO (BAJO CONTRASTE) */
 body::before {
     content: "";
     position: fixed;
@@ -53,15 +53,21 @@ body::before {
     pointer-events: none;
 }
 
+/* CABECERA - DISEÑO DESKTOP */
 .hero {
     position: relative; 
-    padding: 1.5rem 1rem 1.2rem;
+    padding: 2rem 1rem;
     text-align: center;
     border-bottom: 1px solid var(--bdr);
     background: rgba(28, 24, 51, 0.5);
     backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+/* LOGO LATERAL - DISEÑO DESKTOP */
 .hero::before {
     content: "";
     display: block; 
@@ -71,7 +77,7 @@ body::before {
     left: 10px; 
     width: 220px;     
     background-image: url('../img/logo-mundial.png');
-    background-size: 100% 100%; 
+    background-size: contain; 
     background-repeat: no-repeat;
     background-position: center left; 
     z-index: 10;
@@ -79,6 +85,8 @@ body::before {
 }
 
 .hbadge {
+    position: relative;
+    z-index: 20;
     display: inline-block;
     background: var(--acc);
     color: #000;
@@ -92,8 +100,10 @@ body::before {
 }
 
 .hero h1 {
+    position: relative;
+    z-index: 20;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2rem, 6vw, 3rem);
+    font-size: clamp(2.2rem, 6vw, 3.5rem);
     letter-spacing: 0.05em;
     line-height: 1;
     color: #fff;
@@ -105,6 +115,7 @@ body::before {
     text-shadow: 0 0 20px rgba(250, 204, 21, 0.3);
 }
 
+/* NAVEGACIÓN TABS */
 .tabs {
     display: flex;
     background: rgba(28, 24, 51, 0.85);
@@ -148,8 +159,9 @@ body::before {
 
 .tab-link.done { color: var(--grn); }
 
+/* CONTENEDOR PRINCIPAL */
 .main {
-    padding: 2rem 1rem;
+    padding: 2.5rem 1rem;
     max-width: 1000px; 
     margin: 0 auto;
 }
@@ -213,7 +225,7 @@ body::before {
     color: #000;
 }
 
-/* ¡EL ARREGLO DEL RESPONSIVE ESTÁ AQUÍ! */
+/* --- ARREGLO RESPONSIVE (CELULAR) --- */
 @media (max-width: 768px) {
     .tab-link {
         flex: 0 0 auto; 
@@ -221,29 +233,37 @@ body::before {
         padding: 12px 10px;
         border-bottom: 2px solid transparent;
     }
-    .main { padding: 1rem 0.6rem; }
+    
+    .main { padding: 1.5rem 0.8rem; }
     
     .hero { 
-        /* Empujamos el texto a la derecha (100px) para que no choque con el logo */
-        padding: 1.2rem 0.5rem 1.2rem 100px; 
-        min-height: 90px;
+        padding: 1.5rem 1rem;
+        /* IMPORTANTE: Quitamos el logo lateral para ponerlo arriba */
     }
     
     .hero::before {
-        width: 90px; /* Reducimos el ancho del logo en celular */
-        left: 5px;
+        /* El logo pasa de ser un fondo lateral a ser un elemento ARRIBA y CENTRADO */
+        position: static; 
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 15px auto;
+        background-position: center;
+        background-size: contain;
     }
 
     .hero h1 {
-        font-size: 1.6rem; /* Reducimos la letra del título para que no se desborde */
-        line-height: 1.1;
+        font-size: 1.8rem;
+        width: 100%;
+        line-height: 1.2;
     }
 
     .hbadge {
-        font-size: 10px; /* Reducimos un poco la medalla */
+        font-size: 10px;
+        margin-bottom: 10px;
     }
 }
 
+/* BOTONES DE NAVEGACIÓN INFERIORES */
 .nav-buttons {
     display: flex;
     gap: 12px;

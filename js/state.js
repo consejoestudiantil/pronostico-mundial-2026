@@ -6,9 +6,10 @@ const AppState = {
         email: '',
         whatsapp: ''
     },
-    // Añadimos la memoria para el pago
-    pago: JSON.parse(localStorage.getItem('pronostico_pago')) || null,
     
+    // NUEVO: Aquí se guardará la memoria del pago y la foto
+    pago: JSON.parse(localStorage.getItem('pronostico_pago')) || null,
+
     scores: JSON.parse(localStorage.getItem('pronostico_scores')) || {},
     tiebreaks: JSON.parse(localStorage.getItem('pronostico_tiebreaks')) || {},
     thirdsManual: localStorage.getItem('pronostico_thirdsManual') || null,
@@ -26,16 +27,14 @@ const AppState = {
         this.datos.email = email;
         this.datos.whatsapp = whatsapp;
         localStorage.setItem('pronostico_datos', JSON.stringify(this.datos));
-    },
 
-    // Nueva función para guardar el pago
-    guardarPago: function(pagoObj) {
-        this.pago = pagoObj;
-        try {
-            localStorage.setItem('pronostico_pago', JSON.stringify(this.pago));
-        } catch(e) {
-            alert("La imagen es muy pesada para la memoria. Por favor, intenta con una captura de pantalla más ligera.");
-            throw e;
+        // NUEVO: Al darle a "Comenzar", guardamos también el pago para que viaje hasta el final
+        if (this.pago) {
+            try {
+                localStorage.setItem('pronostico_pago', JSON.stringify(this.pago));
+            } catch(e) {
+                alert("⚠️ La imagen es muy pesada para la memoria del navegador. Por favor sube una imagen de menor tamaño.");
+            }
         }
     },
 

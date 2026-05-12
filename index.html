@@ -34,6 +34,20 @@
             height: 40px;
             fill: #FFF; 
         }
+
+        /* ARREGLO RESPONSIVE DEL BOTÓN DE WHATSAPP */
+        @media (max-width: 768px) {
+            .btn-wats-float {
+                width: 50px; /* Más pequeño en celular */
+                height: 50px;
+                bottom: 20px;
+                right: 15px;
+            }
+            .btn-wats-float svg {
+                width: 28px; /* Icono más pequeño */
+                height: 28px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -294,7 +308,7 @@
                 }
 
                 if (!isValid) {
-                    return; // ALERTA NATIVA ELIMINADA. SOLO TEXTOS ROJOS.
+                    return; 
                 }
                 
                 if (tel.startsWith('+')) { tel = "'" + tel; }

@@ -35,31 +35,24 @@ body {
     overflow-x: hidden;
 }
 
-/* MARCA DE AGUA DE BAJO CONTRASTE (ACTUALIZADO) */
+/* MARCA DE AGUA DE BAJO CONTRASTE */
 body::before {
     content: "";
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
-    /* MODIFICADO: Agrandado un poquito más (de 80vh a 100vh) */
     width: 100vh; 
     height: 100vh;
-    
-    background-image: url('../img/fondo-trofeo.png'); /* Asegúrate que la imagen esté aquí */
+    background-image: url('../img/fondo-trofeo.png'); 
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    
-    /* MODIFICADO: Más visible (de 0.03 a 0.06). Sigue siendo sutil, pero ya se nota. */
     opacity: 0.06; 
-    
     z-index: -1;
     pointer-events: none;
 }
 
-/* EL RESTO DEL CÓDIGO PERMANECE IGUAL */
 .hero {
     position: relative; 
     padding: 1.5rem 1rem 1.2rem;
@@ -220,6 +213,7 @@ body::before {
     color: #000;
 }
 
+/* ¡EL ARREGLO DEL RESPONSIVE ESTÁ AQUÍ! */
 @media (max-width: 768px) {
     .tab-link {
         flex: 0 0 auto; 
@@ -229,13 +223,24 @@ body::before {
     }
     .main { padding: 1rem 0.6rem; }
     
-    .hero { padding: 1rem 1rem 1.2rem; }
+    .hero { 
+        /* Empujamos el texto a la derecha (100px) para que no choque con el logo */
+        padding: 1.2rem 0.5rem 1.2rem 100px; 
+        min-height: 90px;
+    }
     
     .hero::before {
-        width: 140px;       
-        top: 0;
-        bottom: 0;
+        width: 90px; /* Reducimos el ancho del logo en celular */
         left: 5px;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem; /* Reducimos la letra del título para que no se desborde */
+        line-height: 1.1;
+    }
+
+    .hbadge {
+        font-size: 10px; /* Reducimos un poco la medalla */
     }
 }
 

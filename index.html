@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Pronóstico del Mundial 2026 🏆</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/inicio.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hbadge">🌎 México · USA · Canadá 2026</div>
+        <h1>PRONÓSTICO DEL <span>MUNDIAL</span> 2026</h1>
+    </header>
+
+    <nav class="tabs">
+        <a href="index.html" class="tab-link act">📝 Datos</a>
+        <a href="pages/grupos.html" class="tab-link locked" id="nav-grupos">⚽ Grupos</a>
+        <a class="tab-link locked">🥉 Terceros</a>
+        <a class="tab-link locked">🔟 16avos</a>
+        <a class="tab-link locked">8️⃣ Octavos</a>
+        <a class="tab-link locked">4️⃣ Cuartos</a>
+        <a class="tab-link locked">🥊 Semis</a>
+        <a class="tab-link locked">🏆 Final</a>
+        <a class="tab-link locked">📋 Resumen</a>
+    </nav>
+
+    <main class="main">
+
+        <div class="card">
+            <div class="card-hd"><div class="card-title">👤 PASO 1: TUS DATOS DE PARTICIPANTE</div></div>
+            <div class="card-body">
+                <div class="field">
+                    <label>C.I. / Documento de Identidad *</label>
+                    <input type="text" id="inp-ci" placeholder="Ej: 1700000000" maxlength="15" inputmode="numeric">
+                    <div class="error-msg" id="err-ci">⚠ Ingresa tu cédula o documento (solo números)</div>
+                </div>
+                <div class="field">
+                    <label>Nombres Completos *</label>
+                    <input type="text" id="inp-nom" placeholder="Ej: JUAN PÉREZ" maxlength="60">
+                    <div class="error-msg" id="err-nom">⚠ Ingresa tu nombre completo</div>
+                </div>
+                <div class="field">
+                    <label>WhatsApp *</label>
+                    <input type="text" id="inp-tel" placeholder="+593 99 999 9999" maxlength="20" inputmode="tel">
+                    <div class="error-msg" id="err-tel">⚠ Ingresa tu número de WhatsApp válido</div>
+                </div>
+                <div class="field">
+                    <label>Email</label>
+                    <input type="email" id="inp-mail" placeholder="correo@gmail.com" maxlength="60">
+                    <div class="error-msg" id="err-mail">⚠ Ingresa un correo electrónico válido</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card pay-card">
+            <div class="card-hd"><div class="card-title">💳 PASO 2: VALIDACIÓN DE PAGO</div></div>
+            <div class="card-body">
+                
+                <div class="bank-details">
+                    <strong>Banco Pichincha (Ahorros)</strong><br>
+                    Titular: Marlon Angulo<br>
+                    <div style="display:flex; gap:10px; margin-top: 8px;">
+                        <input type="text" value="2213503015" readonly style="flex:1; background: var(--bg); cursor: default; padding: 8px; border-radius: 4px; border: 1px solid var(--bdr); color: var(--acc); font-weight: bold;">
+                        <button type="button" id="btn-copy" class="btn-copy" style="padding: 0 15px;">📋 Copiar</button>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="field">
+                        <label>Tipo de transacción *</label>
+                        <select id="pay-tipo" class="form-input">
+                            <option value="">Seleccione...</option>
+                            <option value="Transferencia Directa (Mismo Banco)">Transferencia Directa (Mismo Banco)</option>
+                            <option value="Transferencia Interbancaria">Transferencia Interbancaria</option>
+                            <option value="Depósito en Ventanilla">Depósito en Ventanilla</option>
+                            <option value="Depósito en Cajero/Mi Vecino">Depósito en Cajero / Corresponsal</option>
+                        </select>
+                        <div class="error-msg" id="err-pay-tipo">⚠ Selecciona un tipo de pago</div>
+                    </div>
+                    <div class="field">
+                        <label>¿Desde qué banco envías? *</label>
+                        <input type="text" id="pay-origen" placeholder="Ej: Guayaquil, Produbanco...">
+                        <div class="error-msg" id="err-pay-ori">⚠ Campo requerido</div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>Motivo o uso del depósito *</label>
+                    <input type="text" id="pay-motivo" placeholder="Ej: Pago pronóstico Mundial - Tu Nombre">
+                    <div class="error-msg" id="err-pay-mot">⚠ Ingresa el motivo</div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="field">
+                        <label>Valor ($) *</label>
+                        <input type="number" id="pay-valor" placeholder="0.00" step="0.01" min="0" class="form-input">
+                        <div class="error-msg" id="err-pay-val">⚠ Ingresa el valor</div>
+                    </div>
+                    <div class="field">
+                        <label>No. de Comprobante / Ref. *</label>
+                        <input type="text" id="pay-ref" placeholder="Ej: 123456789">
+                        <div class="error-msg" id="err-pay-ref">⚠ Ingresa la referencia</div>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="field">
+                        <label>Fecha de transacción *</label>
+                        <input type="date" id="pay-fecha" class="form-input">
+                        <div class="error-msg" id="err-pay-fec">⚠ Selecciona la fecha</div>
+                    </div>
+                    <div class="field">
+                        <label>Adjuntar Imagen (Obligatorio) *</label>
+                        <input type="file" id="pay-file" accept="image/*,.pdf" class="form-input" style="padding: 10px;">
+                        <div class="error-msg" id="err-pay-file">⚠ Adjunta el comprobante</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="ibox">
+            <strong>📌 Sistema de puntos:</strong><br>
+            G/E/P: 3pts · Resultado exacto: 5pts · 1° grupo: 8pts · 2° grupo: 10pts · 3° clasificado a 16avos: 12pts · Acertar llave 16avos: 15pts · Clasificar 8vos: 20pts · Acertar 8vos: 30pts · Clasificar cuartos: 50pts · Acertar cuartos: 100pts · Clasificar semis: 300pts · Acertar semi: 350pts · 3°/4° puesto (jugador): 400pts · Subcampeón: 900pts · 4° puesto: 750pts · 3° puesto: 800pts · Finalista: 500pts · <strong>Campeón: 1,500pts</strong>
+        </div>
+
+        <button class="btn btn-p" id="btn-comenzar">Comenzar pronósticos →</button>
+    </main>
+
+    <script src="js/state.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inpCi = document.getElementById('inp-ci');
+            const inpNom = document.getElementById('inp-nom');
+            const inpMail = document.getElementById('inp-mail');
+            const inpTel = document.getElementById('inp-tel');
+            
+            let cBase64 = null, cType = null, cName = null;
+
+            // Cargar datos previos si existen
+            inpCi.value = AppState.datos.ci || '';
+            inpNom.value = AppState.datos.nombre || '';
+            inpMail.value = AppState.datos.email || '';
+            inpTel.value = AppState.datos.whatsapp || '';
+
+            if (AppState.pago) {
+                document.getElementById('pay-tipo').value = AppState.pago.tipo || '';
+                document.getElementById('pay-origen').value = AppState.pago.bancoOrigen || '';
+                document.getElementById('pay-motivo').value = AppState.pago.motivo || '';
+                document.getElementById('pay-valor').value = AppState.pago.valor || '';
+                document.getElementById('pay-ref').value = AppState.pago.referencia || '';
+                document.getElementById('pay-fecha').value = AppState.pago.fecha || '';
+                cBase64 = AppState.pago.fileBase64;
+                cType = AppState.pago.mimeType;
+                cName = AppState.pago.fileName;
+            }
+
+            if (AppState.datos.ci && AppState.datos.nombre) {
+                document.getElementById('nav-grupos').classList.remove('locked');
+                document.getElementById('nav-grupos').classList.add('done');
+            }
+
+            // COPIAR CUENTA
+            document.getElementById('btn-copy').addEventListener('click', () => {
+                navigator.clipboard.writeText('2213503015');
+                const btn = document.getElementById('btn-copy');
+                btn.innerText = "¡COPIADO!";
+                btn.style.background = "var(--grn)";
+                btn.style.color = "#000";
+                setTimeout(() => {
+                    btn.innerText = "📋 Copiar";
+                    btn.style.background = "";
+                    btn.style.color = "";
+                }, 2000);
+            });
+
+            // PROCESAR FOTO
+            document.getElementById('pay-file').addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    if(file.size > 5 * 1024 * 1024) {
+                        alert("El archivo es muy pesado. Máximo 5MB.");
+                        e.target.value = '';
+                        return;
+                    }
+                    cName = file.name;
+                    cType = file.type;
+                    const reader = new FileReader();
+                    reader.onload = (ev) => { cBase64 = ev.target.result.split(',')[1]; };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // --- SANITIZACIÓN EN TIEMPO REAL ---
+            
+            // Cédula: Solo permite números
+            inpCi.addEventListener('input', function() {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+
+            // Forzar Mayúsculas y letras en Nombres
+            inpNom.addEventListener('input', function() {
+                let upper = this.value.toUpperCase();
+                this.value = upper.replace(/[^A-ZÁÉÍÓÚÑ\s]/g, '');
+            });
+
+            // Forzar prefijo +593 en WhatsApp
+            inpTel.addEventListener('focus', function() {
+                if (this.value.trim() === '') this.value = '+593 ';
+            });
+            inpTel.addEventListener('input', function() {
+                let val = this.value.replace(/[^0-9+\s]/g, '');
+                if (val.indexOf('+') > 0) val = val.replace(/\+/g, '');
+                if (!val.startsWith('+593')) val = '+593 ';
+                this.value = val;
+            });
+
+            // EVENTO DE CLIC EN COMENZAR (AQUÍ ESTÁN LAS RESTRICCIONES)
+            document.getElementById('btn-comenzar').addEventListener('click', () => {
+                const ci = inpCi.value.trim();
+                const nom = inpNom.value.trim();
+                const email = inpMail.value.trim();
+                const tel = inpTel.value.trim();
+
+                const pTipo = document.getElementById('pay-tipo').value;
+                const pOri = document.getElementById('pay-origen').value.trim();
+                const pMot = document.getElementById('pay-motivo').value.trim();
+                const pVal = document.getElementById('pay-valor').value.trim();
+                const pRef = document.getElementById('pay-ref').value.trim();
+                const pFec = document.getElementById('pay-fecha').value.trim();
+
+                let isValid = true;
+                
+                // VALIDACIÓN DE DATOS PERSONALES
+                if (!ci || ci.length < 5) { document.getElementById('err-ci').style.display = 'block'; isValid = false; } else { document.getElementById('err-ci').style.display = 'none'; }
+                if (!nom || nom.length < 3) { document.getElementById('err-nom').style.display = 'block'; isValid = false; } else { document.getElementById('err-nom').style.display = 'none'; }
+                if (!tel || tel.length < 8 || tel === '+593 ') { document.getElementById('err-tel').style.display = 'block'; isValid = false; } else { document.getElementById('err-tel').style.display = 'none'; }
+
+                if (email !== "") {
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailPattern.test(email)) { document.getElementById('err-mail').style.display = 'block'; isValid = false; } 
+                    else { document.getElementById('err-mail').style.display = 'none'; }
+                } else { document.getElementById('err-mail').style.display = 'none'; }
+
+                // VALIDACIÓN DE PAGOS
+                if(!pTipo) { document.getElementById('err-pay-tipo').style.display = 'block'; isValid = false; } else { document.getElementById('err-pay-tipo').style.display = 'none'; }
+                if(!pOri) { document.getElementById('err-pay-ori').style.display = 'block'; isValid = false; } else { document.getElementById('err-pay-ori').style.display = 'none'; }
+                if(!pMot) { document.getElementById('err-pay-mot').style.display = 'block'; isValid = false; } else { document.getElementById('err-pay-mot').style.display = 'none'; }
+                if(!pVal || pVal <= 0) { document.getElementById('err-pay-val').style.display = 'block'; isValid = false; } else { document.getElementById('err-pay-val').style.display = 'none'; }
+                if(!pRef) { document.getElementById('err-pay-ref').style.display = 'block'; isValid = false; } else { document.getElementById('err-pay-ref').style.display = 'none'; }
+                if(!pFec) { document.getElementById('err-pay-fec').style.display = 'block'; isValid = false; } else { document.getElementById('err-pay-fec').style.display = 'none'; }
+                if(!cBase64 && !AppState.pago?.fileBase64) { document.getElementById('err-pay-file').style.display = 'block'; isValid = false; } else { document.getElementById('err-pay-file').style.display = 'none'; }
+
+                // SI FALTA ALGO, BLOQUEAMOS EL AVANCE
+                if (!isValid) {
+                    alert("Por favor, completa correctamente todos los campos de PAGO y de TUS DATOS antes de comenzar.");
+                    return;
+                }
+                
+                // Si todo está lleno, guardamos el Pago
+                AppState.guardarPago({
+                    tipo: pTipo, bancoOrigen: pOri, motivo: pMot, valor: pVal, 
+                    referencia: pRef, fecha: pFec, fileBase64: cBase64, 
+                    fileName: cName, mimeType: cType
+                });
+
+                // Guardamos los Datos y avanzamos a la fase de grupos
+                AppState.guardarDatosUsuario(ci, nom, email, tel);
+                window.location.href = 'pages/grupos.html';
+            });
+        });
+    </script>
+</body>
+</html>

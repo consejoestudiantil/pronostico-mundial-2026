@@ -1,0 +1,63 @@
+/* css/grupos.css */
+/* CUADRÍCULA INTELIGENTE */
+#groups-area {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.card { 
+    background: var(--card); 
+    border: 1px solid var(--bdr); 
+    border-radius: 12px; 
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+}
+
+.card-hd { background: linear-gradient(90deg, var(--bg3), var(--bg2)); padding: 0.6rem 1rem; display: flex; align-items: center; justify-content: space-between; }
+.card-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.08em; color: var(--acc); }
+.card-sub { font-size: 11px; color: var(--mt2); }
+.card-body { padding: 0.8rem 1rem; flex: 1; }
+
+/* Estilo para las Banderitas */
+.team-flag {
+    width: 16px;
+    height: auto;
+    border-radius: 2px;
+    vertical-align: middle;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.mrow { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+
+/* Alineación de equipos con sus banderas */
+.mteam { flex: 1; font-size: 13px; color: var(--txt); display: flex; align-items: center; gap: 6px; }
+.mteam.r { justify-content: flex-end; } /* El equipo de la izquierda se pega a la derecha */
+.mteam.l { justify-content: flex-start; } /* El equipo de la derecha se pega a la izquierda */
+
+.mscores { display: flex; gap: 4px; align-items: center; }
+
+.si { width: 38px; background: var(--bg3); border: 1.5px solid var(--bdr); border-radius: 6px; padding: 6px 2px; font-size: 14px; font-weight: 700; color: var(--acc); text-align: center; font-family: 'Outfit', sans-serif; outline: none; }
+.si:focus { border-color: var(--acc); }
+.msep { font-size: 12px; color: var(--mt); font-weight: 700; }
+
+.stbl { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 0.5rem; }
+.stbl th { background: var(--bg3); color: var(--mt); padding: 5px 4px; text-align: center; font-size: 10px; text-transform: uppercase; letter-spacing: 0.03em; }
+.stbl td { padding: 6px 4px; text-align: center; border-bottom: 1px solid var(--bdr); }
+.stbl td:first-child { text-align: left; display: flex; align-items: center; gap: 5px; } /* Para que la bandera en la tabla se vea bien */
+.stbl tr.q1 td:first-child { border-left: 3px solid var(--acc); color: var(--acc); font-weight: bold; }
+.stbl tr.q2 td:first-child { border-left: 3px solid var(--mt2); }
+.stbl tr.q3 td:first-child { border-left: 3px solid var(--grn); color: var(--grn); }
+
+.tie-box { background: #78350f18; border: 1px solid var(--acc); border-radius: 7px; padding: 0.6rem 0.8rem; margin: 0.5rem 0; }
+.tie-title { color: var(--acc); font-weight: 600; font-size: 11px; margin-bottom: 0.4rem; }
+.tie-opts { display: flex; gap: 6px; flex-wrap: wrap; }
+.tie-btn { background: var(--bg3); border: 1.5px solid var(--bdr); border-radius: 6px; padding: 5px 10px; font-size: 12px; color: var(--txt); cursor: pointer; font-family: 'Outfit', sans-serif; transition: all 0.15s; display: flex; align-items: center; gap: 5px;}
+.tie-btn.sel { background: var(--acc); border-color: var(--acc); color: #000; font-weight: 700; }
+
+.prog-w { background: var(--bg3); border-radius: 20px; height: 6px; margin: 0.4rem 0 1.2rem; overflow: hidden; }
+.prog-f { height: 100%; background: linear-gradient(90deg, var(--acc), var(--grn)); border-radius: 20px; transition: width 0.4s; }
+
+.ibox { background: var(--bg3); border: 1px solid var(--bdr); border-radius: 8px; padding: 0.8rem 1rem; margin-bottom: 0.8rem; font-size: 13px; color: var(--mt2); line-height: 1.6; }

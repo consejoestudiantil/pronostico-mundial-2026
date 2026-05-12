@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Pronóstico del Mundial 2026 🏆 - Terceros</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hbadge">🌎 México · USA · Canadá 2026</div>
+        <h1>PRONÓSTICO DEL <span>MUNDIAL</span> 2026</h1>
+    </header>
+
+    <nav class="tabs">
+        <a href="../index.html" class="tab-link done">📝 Datos</a>
+        <a href="grupos.html" class="tab-link done">⚽ Grupos</a>
+        <a href="terceros.html" class="tab-link act">🥉 Terceros</a>
+        <a href="16avos.html" class="tab-link">🔟 16avos</a>
+        <a href="octavos.html" class="tab-link">8️⃣ Octavos</a>
+        <a href="cuartos.html" class="tab-link">4️⃣ Cuartos</a>
+        <a href="semis.html" class="tab-link">🥊 Semis</a>
+        <a href="final.html" class="tab-link">🏆 Final</a>
+        <a href="resumen.html" class="tab-link">📋 Resumen</a>
+    </nav>
+
+    <main class="main">
+        
+        <div class="info-banner" style="background: var(--bg3); border: 1px solid var(--bdr); padding: 15px; border-radius: 8px; margin-bottom: 2rem; color: var(--txt); text-align: center; font-size: 14px;">
+            Los <strong>8 mejores terceros</strong> clasifican a 16avos (Pts → DIF → GF). Los 495 escenarios matemáticos determinan sus rivales de forma automática.
+        </div>
+
+        <div class="ranking-box" style="background: var(--card); border: 1px solid var(--bdr); border-radius: 10px; padding: 1.5rem; margin-bottom: 2rem;">
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid var(--bdr); padding-bottom: 10px;">
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: var(--acc); margin: 0; letter-spacing: 0.05em;">RANKING 12 TERCEROS</h3>
+                <span id="escenario-text" style="font-size: 14px; color: var(--mt2); font-weight: 600;">Escenario: --</span>
+            </div>
+
+            <div id="tie-container" style="display: none; margin-bottom: 20px;"></div>
+
+            <div id="thirds-list"></div>
+
+        </div>
+
+        <div class="nav-buttons" style="margin-top: 2rem; display: flex; gap: 15px;">
+            <button type="button" class="btn btn-sec" id="btn-regresar" style="flex: 1;">
+                ← REGRESAR
+            </button>
+            <button type="button" class="btn btn-p" id="btn-next" style="flex: 2;">
+                GENERAR LLAVES Y VER 16AVOS →
+            </button>
+        </div>
+
+    </main>
+
+    <script src="../js/state.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/terceros.js"></script>
+
+</body>
+</html>

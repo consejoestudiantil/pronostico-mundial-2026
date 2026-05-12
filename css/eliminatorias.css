@@ -1,0 +1,115 @@
+/* css/eliminatorias.css */
+.card { 
+    background: var(--card); 
+    border: 1px solid var(--bdr); 
+    border-radius: 12px; 
+    margin-bottom: 1.5rem; 
+    overflow: hidden; 
+}
+
+.card-hd { 
+    background: linear-gradient(90deg, var(--bg3), var(--bg2)); 
+    padding: 1rem 1.2rem; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+.card-title { 
+    font-family: 'Bebas Neue', sans-serif; 
+    font-size: 1.3rem; 
+    letter-spacing: 0.05em; 
+    color: var(--acc); 
+}
+
+.card-sub { 
+    font-size: 12px; 
+    color: var(--mt2); 
+    background: var(--bg); 
+    padding: 4px 10px; 
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.card-body { 
+    padding: 1.2rem; 
+}
+
+.match-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+/* Estilo para las Banderitas */
+.team-flag {
+    width: 18px;
+    height: auto;
+    border-radius: 2px;
+    vertical-align: middle;
+    margin-right: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.kmatch { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    padding: 12px; 
+    background: var(--bg3); 
+    border-radius: 10px; 
+    border: 1px solid var(--bdr); 
+}
+
+.kteams { 
+    flex: 1; 
+    font-size: 14px; 
+    color: var(--mt2); 
+    line-height: 1.6; 
+}
+
+.kteams strong { 
+    color: var(--txt); 
+    font-size: 15px; 
+    display: flex;
+    align-items: center;
+}
+
+.ksub { 
+    font-size: 11px; 
+    color: var(--mt); 
+    margin-top: 4px; 
+}
+
+.kpnum { 
+    display: inline-block; 
+    font-size: 11px; 
+    background: var(--bg2); 
+    color: var(--acc); 
+    border-radius: 4px; 
+    padding: 2px 6px; 
+    font-weight: 700; 
+    margin-right: 8px; 
+}
+
+.ksel { 
+    min-width: 135px; 
+    background: var(--bg2); 
+    border: 1.5px solid var(--bdr); 
+    border-radius: 8px; 
+    padding: 10px 24px 10px 12px; 
+    font-size: 13px; 
+    font-weight: 600;
+    color: var(--txt); 
+    font-family: 'Outfit', sans-serif; 
+    outline: none; 
+    -webkit-appearance: none; 
+    appearance: none; 
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='%2364748b' d='M5 7L1 3h8z'/%3E%3C/svg%3E"); 
+    background-repeat: no-repeat; 
+    background-position: right 10px center;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.ksel:focus { border-color: var(--acc); }

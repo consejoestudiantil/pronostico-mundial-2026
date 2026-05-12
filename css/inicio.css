@@ -1,0 +1,152 @@
+/* css/inicio.css */
+.card {
+    background: var(--card);
+    border: 1px solid var(--bdr);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-hd {
+    background: linear-gradient(90deg, var(--bg3), var(--bg2));
+    padding: 1rem 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.08em;
+    color: var(--acc);
+}
+
+.card-body {
+    padding: 1.5rem 1.2rem;
+}
+
+.field {
+    margin-bottom: 1.2rem;
+}
+
+.field label {
+    font-size: 12px;
+    color: var(--mt2);
+    display: block;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+}
+
+input[type=text], 
+input[type=email],
+input[type=number],
+input[type=date],
+select.form-input,
+.form-input {
+    width: 100%;
+    background: var(--bg3);
+    border: 1.5px solid var(--bdr);
+    border-radius: 9px;
+    padding: 14px 16px;
+    font-size: 15px;
+    color: var(--txt);
+    font-family: 'Outfit', sans-serif;
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus {
+    border-color: var(--acc);
+}
+
+.error-msg {
+    color: var(--red);
+    font-size: 12px;
+    margin-top: 6px;
+    display: none;
+    font-weight: 500;
+}
+
+.ibox {
+    background: var(--bg3);
+    border: 1px solid var(--bdr);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.5rem;
+    font-size: 13px;
+    color: var(--mt2);
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ibox strong { color: var(--txt); }
+
+/* --- NUEVOS ESTILOS PARA EL PAGO EN INICIO --- */
+.pay-card {
+    border-color: var(--acc) !important;
+}
+
+.pay-card .card-hd {
+    background: linear-gradient(90deg, #0f2e22, var(--bg2)) !important;
+}
+
+.bank-details {
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--acc);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.btn-copy {
+    background: var(--bg);
+    border: 1px solid var(--acc);
+    color: var(--acc);
+    padding: 0 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-copy:hover { background: rgba(26, 215, 128, 0.1); }
+
+/* Estilo archivo */
+input[type=file].form-input {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px dashed var(--mt2);
+    cursor: pointer;
+}
+input[type=file]::file-selector-button {
+    background: var(--acc);
+    color: #000;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+@media (max-width: 600px) {
+    .form-grid { grid-template-columns: 1fr; gap: 0; }
+}

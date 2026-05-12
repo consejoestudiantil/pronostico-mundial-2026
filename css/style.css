@@ -1,0 +1,219 @@
+/* css/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* PALETA "NOCHE MUNDIAL" BASADA EN TU IMAGEN */
+    --bg: #110e1f;        /* Fondo oscuro azul/morado */
+    --bg2: #1c1833;       /* Cajas de tarjetas */
+    --bg3: #2a254a;       /* Cajas resaltadas o marcadores */
+    --card: #1c1833;      /* Tarjetas principales */
+    --bdr: #36305a;       /* Bordes sutiles */
+    --acc: #facc15;       /* AMARILLO ORO VIBRANTE (Títulos, botones activos) */
+    --acc-hover: #eab308; /* Amarillo oscuro para hover */
+    --grn: #34d399;       /* Verde para botones de enviar/éxito */
+    --red: #f43f5e;       /* Rojo alertas */
+    --blue: #38bdf8;      /* Azul celeste */
+    --txt: #ffffff;       /* Texto principal blanco */
+    --mt: #cbd5e1;        /* Texto secundario gris claro */
+    --mt2: #94a3b8;       /* Texto terciario */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg);
+    /* Fondo con gradiente oscuro vibrante y toques de magenta/cian sutiles simulando luces de estadio */
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(236, 72, 153, 0.15), transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.15), transparent 40%),
+        linear-gradient(135deg, #110e1f 0%, #17112e 50%, #0d1222 100%);
+    color: var(--txt);
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    padding-bottom: 68px;
+}
+
+.hero {
+    padding: 1.5rem 1rem 1.2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--bdr);
+    background: rgba(28, 24, 51, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.hbadge {
+    display: inline-block;
+    background: var(--acc);
+    color: #000;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 16px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 4px 15px rgba(250, 204, 21, 0.2);
+}
+
+.hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 6vw, 3rem);
+    letter-spacing: 0.05em;
+    line-height: 1;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.hero h1 span {
+    color: var(--acc);
+    text-shadow: 0 0 20px rgba(250, 204, 21, 0.3);
+}
+
+.tabs {
+    display: flex;
+    background: rgba(28, 24, 51, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--bdr);
+    overflow-x: auto;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar { display: none; }
+
+.tab-link {
+    flex: 1; 
+    text-align: center;
+    padding: 16px 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--mt);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.tab-link.act {
+    color: var(--acc);
+    border-bottom-color: var(--acc);
+    text-shadow: 0 0 10px rgba(250, 204, 21, 0.4);
+}
+
+.tab-link.locked {
+    color: rgba(255, 255, 255, 0.2);
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.tab-link.done { color: var(--grn); }
+
+.main {
+    padding: 2rem 1rem;
+    max-width: 1000px; 
+    margin: 0 auto;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.btn-p {
+    background: var(--acc);
+    color: #000;
+}
+
+.btn-p:hover {
+    background: var(--acc-hover);
+    transform: scale(0.98);
+}
+
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--red);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    z-index: 9999;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    pointer-events: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    max-width: 90vw;
+    white-space: nowrap;
+}
+
+.toast.on {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.toast.success {
+    background: var(--grn);
+    color: #000;
+}
+
+@media (max-width: 768px) {
+    .tab-link {
+        flex: 0 0 auto; 
+        font-size: 11px;
+        padding: 12px 10px;
+        border-bottom: 2px solid transparent;
+    }
+    .main { padding: 1rem 0.6rem; }
+    .hero { padding: 1rem 1rem 0.8rem; }
+}
+
+/* --- BOTONES DE NAVEGACIÓN --- */
+.nav-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 2rem;
+}
+
+.nav-buttons .btn { margin-bottom: 0; }
+
+.btn-sec {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--txt);
+    border: 1px solid var(--bdr);
+    flex: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-sec:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--mt);
+}
+
+.nav-buttons .btn-p { flex: 2; }

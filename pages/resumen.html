@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Pronóstico del Mundial 2026 🏆 - Resumen y Envío</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/resumen.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hbadge">🌎 México · USA · Canadá 2026</div>
+        <h1>PRONÓSTICO DEL <span>MUNDIAL</span> 2026</h1>
+    </header>
+
+    <nav class="tabs">
+        <a href="../index.html" class="tab-link done">📝 Datos</a>
+        <a href="grupos.html" class="tab-link done">⚽ Grupos</a>
+        <a href="terceros.html" class="tab-link done">🥉 Terceros</a>
+        <a href="16avos.html" class="tab-link done">🔟 16avos</a>
+        <a href="octavos.html" class="tab-link done">8️⃣ Octavos</a>
+        <a href="cuartos.html" class="tab-link done">4️⃣ Cuartos</a>
+        <a href="semis.html" class="tab-link done">🥊 Semis</a>
+        <a href="final.html" class="tab-link done">🏆 Final</a>
+        <a href="resumen.html" class="tab-link act">📋 Resumen</a>
+    </nav>
+
+    <main class="main">
+        
+        <div class="user-card" id="res-user"></div>
+
+        <div class="section-title">CUADRO DE HONOR</div>
+        <div class="podium-container" id="res-podium"></div>
+
+        <div class="section-title">8 MEJORES TERCEROS</div>
+        <div class="thirds-wrapper" id="res-thirds"></div>
+
+        <div class="section-title">POSICIONES POR GRUPO (TOP 3)</div>
+        <div class="groups-grid" id="res-groups"></div>
+
+        <div class="nav-buttons" style="margin-top: 3rem; display: flex; gap: 20px; align-items: center; width: 100%;">
+            
+            <button type="button" class="btn btn-sec" id="btn-regresar" style="padding: 18px 30px; font-size: 1.1rem; flex: 1; max-width: 250px;">
+                ← REGRESAR
+            </button>
+            
+            <button type="button" class="btn btn-p btn-submit" id="btn-enviar" style="padding: 20px; font-size: 1.3rem; font-weight: 800; flex: 3; border-radius: 12px; letter-spacing: 1px;">
+                <span id="btn-text">✅ CONFIRMAR Y ENVIAR PRONÓSTICO</span>
+                <div class="spinner" id="btn-loader" style="display:none;"></div>
+            </button>
+            
+        </div>
+
+        <button type="button" class="btn btn-p" id="btn-reiniciar" style="display: none; margin-top: 2rem; width: 100%; padding: 20px; font-size: 1.3rem; border-radius: 12px; font-weight: 800;">
+            🔄 INICIAR NUEVO PRONÓSTICO
+        </button>
+
+    </main>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../js/state.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/resumen.js"></script>
+
+</body>
+</html>
